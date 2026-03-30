@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.F.A Clínica Odontológica Integrativa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- NAV TRANSITION OVERLAY -->
+<div id="navOverlay">
+  <div class="nov-strip"></div>
+  <div class="nov-strip"></div>
+  <div class="nov-strip"></div>
+  <span id="navOverlayLabel"></span>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/5511999999999" target="_blank">
+  <span class="wa-tooltip">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lbClose">×</span>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+<a class="nav-logo" href="#">
+  <span>A.F.A</span>
+  <img src="logo.PNG" class="nav-logo-img" alt="Logo">
+</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+    <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+    <li><a href="#resultados" onclick="closeMenu()">Resultados</a></li>
+    <li><a href="#depoimentos" onclick="closeMenu()">Pacientes</a></li>
+    <li><a href="#contato" class="nav-cta" onclick="closeMenu()">Agendar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stripes"></div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1606811842018-cca90b66a5c8?w=1200&q=80&auto=format&fit=crop" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="hero-content">
+    <img src="logo.PNG" class="hero-logo" alt="Logo A.F.A Odontologia">
+    <p class="hero-eyebrow">Clínica Odontológica Integrativa</p>
+    <h1 class="hero-title">A.F.A<span>Odontologia</span></h1>
+    <p class="hero-sub">Dr. Adriano Fernandes de Amorim</p>
+    <p class="hero-cro">Cirurgião-Dentista &nbsp;·&nbsp; CRO/SP: 142728</p>
+    <div class="hero-btns">
+      <a href="#contato" class="btn-primary">Agendar Consulta</a>
+      <a href="#resultados" class="btn-outline">Ver Resultados</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="1000">0</div>
+    <div class="stat-label">Pacientes Atendidos</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="15">0</div>
+    <div class="stat-label">Anos de Experiência</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="100">0</div>
+    <div class="stat-label">% Satisfação</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="12">0</div>
+    <div class="stat-label">Especialidades</div>
+  </div>
+</div>
+
+<!-- GALLERY — SMILES -->
+<section class="gallery" id="resultados">
+  <div class="section-header reveal">
+    <p class="section-tag">Transformações Reais</p>
+    <h2 class="section-title">Sorrisos que <em>Inspiram</em></h2>
+    <div class="ornament"><span>✦</span></div>
+    <p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;">Passe o mouse sobre as imagens e clique para ampliar</p>
+  </div>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track" id="track1"></div>
+    <div class="gallery-track gallery-track-2" id="track2"></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img-wrap reveal">
+      <img class="sobre-img" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80&auto=format&fit=crop" alt="Dr. Adriano Fernandes de Amorim">
+      <div class="sobre-img-badge">
+        <div class="num">15+</div>
+        <div class="lbl">Anos de<br>Experiência</div>
+      </div>
+    </div>
+    <div class="sobre-text reveal">
+      <p class="section-tag">Quem Somos</p>
+      <h2 class="section-title">Dr. Adriano<br>Fernandes de Amorim</h2>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--gold);font-weight:300;margin-bottom:32px;">Cirurgião-Dentista · CRO/SP 142728</h3>
+      <p style="color:rgba(255,255,255,.7);line-height:1.9;font-size:16px;margin-bottom:20px;">Formado com distinção e especialização em odontologia integrativa, o Dr. Adriano une técnica avançada e cuidado humanizado para transformar sorrisos com precisão e excelência.</p>
+      <p style="color:rgba(255,255,255,.7);line-height:1.9;font-size:16px;margin-bottom:20px;">Na A.F.A, cada paciente recebe um plano de tratamento personalizado, com tecnologia de ponta e atenção aos mínimos detalhes para resultados que duram uma vida.</p>
+      <div class="features">
+        <div class="feat"><div class="feat-icon">✦</div><div class="feat-text">Atendimento personalizado e humanizado</div></div>
+        <div class="feat"><div class="feat-icon">✦</div><div class="feat-text">Equipamentos de última geração</div></div>
+        <div class="feat"><div class="feat-icon">✦</div><div class="feat-text">Abordagem integrativa e preventiva</div></div>
+        <div class="feat"><div class="feat-icon">✦</div><div class="feat-text">Ambiente acolhedor e confortável</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="section-header reveal">
+    <p class="section-tag">O que Oferecemos</p>
+    <h2 class="section-title">Nossos <em>Serviços</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <div class="servicos-grid">
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1588776814546-1ffbb172e86c?w=500&q=80&auto=format&fit=crop" alt="Estética Dental">
+      <div class="serv-num">01</div>
+      <h3 class="serv-title">Estética Dental</h3>
+      <p class="serv-desc">Clareamento, facetas de porcelana e lentes de contato dental para o sorriso dos seus sonhos.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80&auto=format&fit=crop" alt="Implantodontia">
+      <div class="serv-num">02</div>
+      <h3 class="serv-title">Implantodontia</h3>
+      <p class="serv-desc">Implantes dentários com tecnologia de ponta para reabilitação oral completa e natural.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&q=80&auto=format&fit=crop" alt="Odontologia Integrativa">
+      <div class="serv-num">03</div>
+      <h3 class="serv-title">Odontologia Integrativa</h3>
+      <p class="serv-desc">Abordagem holística que une saúde bucal e bem-estar geral para qualidade de vida.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80&auto=format&fit=crop" alt="Endodontia">
+      <div class="serv-num">04</div>
+      <h3 class="serv-title">Endodontia</h3>
+      <p class="serv-desc">Tratamento de canal com técnicas modernas, garantindo conforto e preservação do dente natural.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&q=80&auto=format&fit=crop" alt="Ortodontia">
+      <div class="serv-num">05</div>
+      <h3 class="serv-title">Ortodontia</h3>
+      <p class="serv-desc">Aparelhos convencionais e alinhadores invisíveis para o alinhamento perfeito dos dentes.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+    <div class="serv-card reveal">
+      <img class="serv-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80&auto=format&fit=crop" alt="Prevenção">
+      <div class="serv-num">06</div>
+      <h3 class="serv-title">Prevenção e Manutenção</h3>
+      <p class="serv-desc">Consultas de rotina, limpeza profissional e orientações para saúde bucal duradoura.</p>
+      <a href="#contato" class="serv-more">Saiba mais →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="before-after">
+  <div class="section-header reveal">
+    <p class="section-tag">Transformação Real</p>
+    <h2 class="section-title">Antes e <em>Depois</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <div class="ba-slider-wrap reveal" id="baWrap">
+    <div class="ba-images" id="baImages">
+      <img class="ba-after" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80&auto=format&fit=crop" alt="Depois">
+      <img class="ba-before" id="baBefore" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80&auto=format&fit=crop" alt="Antes" style="width:50%">
+      <div class="ba-divider" id="baDivider" style="left:50%">
+        <div class="ba-handle">⟷</div>
+      </div>
+      <div class="ba-label ba-label-before">Antes</div>
+      <div class="ba-label ba-label-after">Depois</div>
+    </div>
+    <p class="ba-instructions">◀ Arraste para comparar ▶</p>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais" id="diferenciais">
+  <div class="section-header reveal">
+    <p class="section-tag">Por que nos escolher</p>
+    <h2 class="section-title">Nossos <em>Diferenciais</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-item reveal"><div class="diff-num">I</div><div class="diff-title">Excelência Clínica</div><div class="diff-text">Formação contínua e atualização nas melhores técnicas odontológicas do mundo.</div></div>
+    <div class="diff-item reveal"><div class="diff-num">II</div><div class="diff-title">Tecnologia Premium</div><div class="diff-text">Equipamentos de última geração para diagnósticos precisos e tratamentos seguros.</div></div>
+    <div class="diff-item reveal"><div class="diff-num">III</div><div class="diff-title">Cuidado Humanizado</div><div class="diff-text">Atendimento acolhedor com atenção total ao conforto e bem-estar de cada paciente.</div></div>
+    <div class="diff-item reveal"><div class="diff-num">IV</div><div class="diff-title">Resultados Naturais</div><div class="diff-text">Tratamentos duradouros em total harmonia com a identidade de cada sorriso.</div></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="section-header reveal">
+    <p class="section-tag">Quem já transformou o sorriso</p>
+    <h2 class="section-title">O que dizem nossos <em>Pacientes</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <div class="dep-tabs reveal">
+    <button class="dep-tab active" onclick="showDep(0)">Mariana C.</button>
+    <button class="dep-tab" onclick="showDep(1)">Rafael M.</button>
+    <button class="dep-tab" onclick="showDep(2)">Fernanda A.</button>
+    <button class="dep-tab" onclick="showDep(3)">Carlos S.</button>
+  </div>
+  <div class="dep-content active" id="dep-0">
+    <div class="dep-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop" alt="Mariana"></div>
+    <span class="dep-quote-mark">"</span>
+    <p class="dep-text">O Dr. Adriano transformou completamente meu sorriso. A atenção aos detalhes e o cuidado durante todo o processo foram absolutamente excepcionais.</p>
+    <div class="dep-stars">★★★★★</div>
+    <div class="dep-author">Mariana Costa</div>
+    <div class="dep-role">Implante Dental</div>
+  </div>
+  <div class="dep-content" id="dep-1">
+    <div class="dep-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop" alt="Rafael"></div>
+    <span class="dep-quote-mark">"</span>
+    <p class="dep-text">Sempre tive medo de dentista, mas a equipe da AFA me deixou completamente à vontade. O resultado superou todas as minhas expectativas.</p>
+    <div class="dep-stars">★★★★★</div>
+    <div class="dep-author">Rafael Mendes</div>
+    <div class="dep-role">Estética Dental</div>
+  </div>
+  <div class="dep-content" id="dep-2">
+    <div class="dep-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80&auto=format&fit=crop" alt="Fernanda"></div>
+    <span class="dep-quote-mark">"</span>
+    <p class="dep-text">A abordagem integrativa é diferenciada. O Dr. Adriano se preocupa genuinamente com a saúde completa do paciente, não apenas com o sorriso.</p>
+    <div class="dep-stars">★★★★★</div>
+    <div class="dep-author">Fernanda Alves</div>
+    <div class="dep-role">Odontologia Integrativa</div>
+  </div>
+  <div class="dep-content" id="dep-3">
+    <div class="dep-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format&fit=crop" alt="Carlos"></div>
+    <span class="dep-quote-mark">"</span>
+    <p class="dep-text">Fiz o clareamento dental e o resultado foi surpreendente. A clínica é moderna, o ambiente é sofisticado e o atendimento é impecável.</p>
+    <div class="dep-stars">★★★★★</div>
+    <div class="dep-author">Carlos Souza</div>
+    <div class="dep-role">Clareamento Dental</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-header reveal">
+    <p class="section-tag">Tire suas Dúvidas</p>
+    <h2 class="section-title">Perguntas <em>Frequentes</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Como funciona a primeira consulta?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Na primeira consulta, realizamos uma avaliação completa da saúde bucal, incluindo exames de imagem e anamnese detalhada. Em seguida, o Dr. Adriano apresenta um plano de tratamento personalizado com todas as opções e estimativas de valores.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Vocês atendem planos odontológicos?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Trabalhamos com os principais planos odontológicos do mercado. Entre em contato para verificar a cobertura do seu plano e os procedimentos disponíveis. Também oferecemos condições especiais de parcelamento para tratamentos particulares.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Qual é a duração do clareamento dental?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Os resultados do clareamento dental podem durar de 1 a 3 anos, dependendo dos hábitos alimentares e de higiene do paciente. Oferecemos clareamento a laser de alta tecnologia com resultados visíveis já na primeira sessão.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Implante dental dói?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>O procedimento de implante é realizado sob anestesia local, portanto é praticamente indolor durante a cirurgia. No pós-operatório pode haver um leve desconforto por 2 a 3 dias, facilmente controlado com medicação prescrita.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Como agendar uma consulta?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Você pode agendar pelo WhatsApp, telefone ou pelo botão "Agendar Consulta" desta página. Nossa equipe responde em até 2 horas úteis e encontra o melhor horário para você.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="section-header reveal">
+    <p class="section-tag">Vamos Conversar</p>
+    <h2 class="section-title">Agende sua <em>Consulta</em></h2>
+    <div class="ornament"><span>✦</span></div>
+  </div>
+  <p class="reveal">Dê o primeiro passo para transformar seu sorriso. Nossa equipe está pronta para encontrar o melhor horário para você.</p>
+  <div class="contact-cards">
+    <a href="tel:+5511999999999" class="contact-card reveal">
+      <span class="contact-card-icon">📞</span>
+      <div class="contact-card-label">Telefone</div>
+      <div class="contact-card-value">(11) 99999-9999</div>
+    </a>
+    <a href="https://wa.me/5511999999999" class="contact-card reveal">
+      <span class="contact-card-icon">💬</span>
+      <div class="contact-card-label">WhatsApp</div>
+      <div class="contact-card-value">Fale Agora</div>
+    </a>
+    <a href="/cdn-cgi/l/email-protection#cba8a4a5bfaabfa48ba8a7a2a5a2a8aaaaadaae5a8a4a6e5a9b9" class="contact-card reveal">
+      <span class="contact-card-icon">✉️</span>
+      <div class="contact-card-label">E-mail</div>
+      <div class="contact-card-value"><span class="__cf_email__" data-cfemail="f695999882978299b6959a9f989f9597979097d895999bd89484">[email&#160;protected]</span></div>
+    </a>
+  </div>
+  <a href="https://wa.me/5511999999999" class="btn-primary reveal">Agendar pelo WhatsApp ↗</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">A.F.A</div>
+      <div class="footer-tagline">Clínica Odontológica Integrativa</div>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#sobre">Sobre o Dr. Adriano</a></li>
+        <li><a href="#servicos">Nossos Serviços</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#servicos">Estética Dental</a></li>
+        <li><a href="#servicos">Implantodontia</a></li>
+        <li><a href="#servicos">Ortodontia</a></li>
+        <li><a href="#servicos">Odontologia Integrativa</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
+        <li><a href="https://wa.me/5511999999999">WhatsApp</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#4b2824253f2a3f240b2827222522282a2a2d2a65282426652939">E-mail</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 A.F.A Clínica Odontológica Integrativa · Todos os direitos reservados</span>
+    <span>Dr. Adriano Fernandes de Amorim · CRO/SP: 142728</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
