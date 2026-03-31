@@ -107,12 +107,13 @@ document.querySelectorAll('.stat-item').forEach(function(el){countObs.observe(el
 
 // ── GALLERY ──
 var smileImgs=[
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',];
+"Imagens/sorriso1.jpg",
+"Imagens/sorriso2.jpg",
+"Imagens/sorriso3.jpg",
+"Imagens/sorriso4.jpg",
+"Imagens/sorriso5.jpg",
+"Imagens/sorriso6.jpg"
+];
 function buildTrack(id,imgs){
   var t=document.getElementById(id);
   if(!t)return;
