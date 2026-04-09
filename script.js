@@ -1,6 +1,7 @@
 
 (function(){
 
+
 // ── CURSOR ──
 var cursor=document.getElementById('cursor');
 var ring=document.getElementById('cursorRing');
@@ -177,3 +178,136 @@ window.toggleFaq=toggleFaq;
 
 }
 )();
+
+gsap.registerPlugin(ScrollTrigger);
+
+// HERO CINEMATIC
+gsap.to(".hero-content", {
+  y: -150,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.to(".hero-img", {
+  scale: 1.2,
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.to(".hero-overlay", {
+  opacity: 0.8,
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.to(".sobre", {
+  scrollTrigger: {
+    trigger: ".sobre",
+    start: "top top",
+    end: "+=1000",
+    scrub: true,
+  }
+});
+
+gsap.fromTo(".sobre-text", 
+  { opacity: 0, x: 80 }, 
+  { 
+    opacity: 1, 
+    x: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".sobre",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  }
+);
+
+
+gsap.fromTo(".sobre-img", 
+  { opacity: 0, x: -100 }, 
+  { 
+    opacity: 1, 
+    x: 0,
+    scrollTrigger: {
+      trigger: ".sobre",
+      start: "top 80%",
+      end: "top 30%",
+      scrub: true
+    }
+  }
+);
+
+gsap.fromTo(".serv-card",
+  { opacity: 0, y: 80 },
+  {
+    opacity: 1,
+    y: 0,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".servicos",
+      start: "top 80%",
+      end: "top 30%",
+      scrub: true
+    }
+  }
+);
+
+gsap.defaults({
+  ease: "power3.out",
+  duration: 1
+});
+
+gsap.utils.toArray("section").forEach(section => {
+  gsap.fromTo(section,
+    { opacity: 0.6 },
+    {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 1
+      }
+    }
+  );
+});
+
+gsap.from(".whatsapp-button", {
+  opacity: 0,
+  y: 100,
+  delay: 2,
+  duration: 1
+});
+
+  const lenis = new Lenis({
+  duration: 1.2,
+  smooth: true
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
