@@ -12,7 +12,7 @@
   --muted: rgba(255,255,255,0.6);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:auto;}
+html{scroll-behavior:smooth;}
 body{font-family:'Lato',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden;}
 
 /* NAV TRANSITION OVERLAY */
@@ -301,4 +301,16 @@ footer{background:#04080f;padding:56px 60px 32px;border-top:1px solid rgba(201,1
   .footer-top{flex-direction:column;}
   footer{padding:48px 24px 24px;}
   .sobre-img-badge{right:0;bottom:-16px;}
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.2), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
